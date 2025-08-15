@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Portfolio – Diseño Gráfico</title>
+    <link rel="stylesheet" href="./Style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- CORREGIDO: cargar el JS con defer -->
+    <script src="java.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=location_on" />
+  </head>
+  <body>
+    <main class="wrapper">
+      <!-- Presentación -->
+      <section id="about">
+        <img src="https://i.postimg.cc/BZKs48yV/Whats-App-Image-2025-05-19-at-19-53-58.jpg" alt="Imagen desde Drive" class="foto">
+        <h1>Leonel Carlucci</h1>
+        <h3>Diseñador grafico junior</h3>
+        <br>
+        <p><span class="material-symbols-outlined">location_on</span>Mendoza,Argentina</p>
+        <br>
+        <div class="footer-inner">
+          <div class="socials" aria-label="Redes sociales">
+            <a href="https://www.instagram.com/leoocarlucci" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.75-3.25a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/tuusuario" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 8.75h3.96V21H3V8.75zm7.47 0H14.4v1.68h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5V21h-3.96v-5.43c0-1.3-.02-2.97-1.8-2.97-1.8 0-2.07 1.4-2.07 2.87V21H10.5V8.75z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="SobreMi">
+        <h2>Sobre Mi</h2>
+        <p>
+          Soy de Godoy Cruz, Mendoza. Tengo 17 años y estudio en 5º año del secundario Tomás Alva Edison.
+          Servicios: Diseño publicitario, diseño de presentaciones, diseño de marcas, logotipos y diseño visual.
+        </p>
+      </section>
+
+      <!-- Barra de secciones -->
+      <nav class="nav-bar">
+        <a href="#projects" class="nav-item nav-link" data-target="projects">
+          <span class="material-icons">grid_view</span> Projects
+        </a>
+        <a href="#skills" class="nav-item nav-link" data-target="skills">
+          <span class="material-icons">code</span> Skills
+        </a>
+        <a href="#contact" class="nav-item nav-link" data-target="contact">
+          <span class="material-icons">mail</span> Contact
+        </a>
+      </nav>
+
+      <!-- Sección Projects -->
+      <section id="projects" class="hidden-section">
+        <h2>Projects</h2>
+
+        <article>
+          <h3>Portfolio Website</h3>
+          <p>Sitio web personal para mostrar trabajos, habilidades y contacto. Incluye modo oscuro, animaciones suaves y diseño responsive.</p>
+          <img src="https://via.placeholder.com/960x480" alt="Mockup proyecto 1" class="project-img">
+        </article>
+
+        <article>
+          <h3>Branding para Empresa X</h3>
+          <p>Identidad visual completa: logotipo, paleta cromática, tipografías y guía de uso.</p>
+          <img src="https://via.placeholder.com/960x480" alt="Mockup proyecto 2" class="project-img">
+        </article>
+      </section>
+
+      <!-- Sección Skills -->
+      <section id="skills" class="hidden-section">
+        <h2>Skills</h2>
+        <ul>
+          <li>Diseño gráfico: Photoshop, Illustrator, Figma</li>
+          <li>Edición de video: Premiere Pro, After Effects</li>
+          <li>Web básico: HTML, CSS, JavaScript</li>
+          <li>Marca & Presentaciones: storytelling visual, guías de estilo</li>
+        </ul>
+      </section>
+
+      <!-- Sección Contact -->
+      <section id="contact" class="hidden-section">
+        <h2>Contact</h2>
+        <p><strong>Correo:</strong> ejemplo@correo.com</p>
+        <p><strong>Teléfono:</strong> +54 9 261 123 4567</p>
+        <p><strong>Instagram:</strong> <a href="https://instagram.com/usuario" target="_blank">@usuario</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/usuario" target="_blank">Perfil profesional</a></p>
+        <p><strong>Disponibilidad:</strong> freelance/part-time</p>
+      </section>
+    </main>
+  </body>
+</html>

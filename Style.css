@@ -1,0 +1,298 @@
+/* =============================
+         VARIABLES & BASE STYLES
+      ============================= */
+      :root {
+        --azul-oscuro: #0d1b2a;
+        --blanco: #ffffff;
+        --gris-suave: rgba(255, 255, 255, 0.08);
+        --radio-base: 0.5rem;
+        --transition-fast: 150ms ease-in-out;
+      }
+
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+        background-color: var(--azul-oscuro);
+        color: var(--blanco);
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        background: linear-gradient(120deg, #0d1b2a, #000000);
+        background-size: 400% 400%;
+        animation: moverFondo 15s ease infinite;
+        background-attachment: fixed;
+
+      }
+@keyframes moverFondo {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} 
+
+      img,
+      picture {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* =============================
+         LAYOUT
+      ============================= */
+      .wrapper {
+        max-width: 960px;
+        margin-inline: auto;
+        padding: 2.5rem 1.25rem;
+      }
+
+      section {
+        border-bottom: 1px solid var(--gris-suave);
+        padding-block: 4rem;
+      }
+
+      section:last-of-type {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      /* =============================
+         TYPOGRAPHY
+      ============================= */
+      h1,
+      h2 {
+        margin-bottom: 1rem;
+        letter-spacing: 0.04em;
+      }
+
+      h1 {
+        font-size: 3rem;
+        font-weight: 800;
+      }
+
+      h2 {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      p {
+        max-width: 70ch;
+        opacity: 0.9;
+        font-size: 20px;
+      }
+
+      /* =============================
+         COMPONENTS
+      ============================= */
+      .project-img {
+        width: 100%;
+        max-height: 550px;
+        object-fit: cover;
+        border-radius: var(--radio-base);
+        margin-block: 1.75rem;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      }
+      .project-img:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 0.85rem 1.75rem;
+        background: var(--blanco);
+        color: var(--azul-oscuro);
+        border-radius: calc(var(--radio-base) - 2px);
+        font-weight: 600;
+        text-decoration: none;
+        transition: background var(--transition-fast), transform var(--transition-fast);
+      }
+      .btn:hover {
+        background: #e6e6e6;
+        transform: translateY(-2px);
+      }
+
+      /* =============================
+         FOOTER
+      ============================= */
+      
+      #SobreMi{
+        font-size: 2rem;
+        padding: 0%;
+      }
+
+      .foto {
+        width: 200px;
+        height: 200px;
+        float: right;
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+        border-radius: 50%;
+        object-fit:cover;
+        overflow: hidden;
+        }   
+
+
+      .avatar {
+        width: 250px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--blanco);
+        flex-shrink: 0;
+      }
+
+      .socials {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--blanco);
+        transition: transform var(--transition-fast), opacity var(--transition-fast);
+      }
+      .social-link:hover {
+        transform: translateY(-3px);
+        opacity: 0.85;
+      }
+
+      .social-link svg {
+        width: 20px;
+        height: 20px;
+        fill: var(--azul-oscuro);
+      }
+
+      /* =============================
+         UTILITIES
+      ============================= */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* =============================
+         MEDIA QUERIES
+      ============================= */
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          transition: none !important;
+        }
+      }
+      /* Barra de secciones */
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid var(--gris-suave);
+  padding: 1rem 0;
+  gap: 3rem; /* más separación entre ítems */
+  margin-top: 2rem; /* más separación respecto a "Sobre Mi" */
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.nav-item:hover {
+  opacity: 1;
+}
+
+.nav-item .material-icons {
+  font-size: 18px;
+}
+
+
+section {
+  border-bottom: 1px solid var(--gris-suave);
+  padding-block: 4rem;
+  opacity: 1;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Secciones ocultas por defecto */
+.hidden-section {
+  opacity: 0;
+  transform: translateY(50px);
+  height: 0;
+  overflow: hidden;
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Cuando la sección se muestre */
+.visible-section {
+  opacity: 1;
+  transform: translateY(0);
+  height: auto;
+}
+nav ul {
+  display: none;
+}
+/* Secciones ocultas: colapsadas de verdad (sin padding ni borde) */
+.hidden-section {
+  opacity: 0;
+  transform: translateY(8px);
+  max-height: 0;                /* usar max-height para animar apertura */
+  padding-top: 0 !important;    /* anula el padding de 'section' */
+  padding-bottom: 0 !important;
+  margin: 0;
+  border: 0;                    /* quita las líneas divisorias cuando está oculta */
+  overflow: hidden;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    max-height 0.35s ease,
+    padding 0.35s ease;
+}
+
+/* Secciones visibles: restaurar padding y borde (pegadas a la barra) */
+.visible-section {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 2000px;           /* suficientemente grande para el contenido */
+  padding-top: 1.25rem;         /* ajústalo a tu gusto para que quede cerca de la barra */
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--gris-suave);
+}
