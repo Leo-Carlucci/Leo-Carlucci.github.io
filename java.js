@@ -11,13 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetSection = document.getElementById(targetId);
       if (!targetSection) return;
 
-      // Oculta todas
+      // Oculta todas las secciones
       sections.forEach(sec => sec.classList.remove('visible-section'));
 
-      // Muestra la seleccionada
+      // Muestra la sección seleccionada
       targetSection.classList.add('visible-section');
 
-      // Retrasa el scroll para que haya empezado la animación de apertura
+      // Retrasa el scroll para que coincida con la animación CSS
       setTimeout(() => {
         targetSection.scrollIntoView({
           behavior: 'smooth',
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ====== CARRUSEL (manual) ======
+  // ====== CARRUSEL (solo manual) ======
   const carousel = document.querySelector(".carousel");
   const items = document.querySelectorAll(".carousel-item");
   const prevBtn = document.querySelector(".prev");
@@ -40,21 +40,25 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateCarousel() {
       carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
+      // actualizar indicadores
       dots.forEach((dot, index) => {
         dot.classList.toggle("active", index === currentIndex);
       });
     }
 
+    // Botón siguiente
     nextBtn.addEventListener("click", () => {
       currentIndex = (currentIndex + 1) % items.length;
       updateCarousel();
     });
 
+    // Botón anterior
     prevBtn.addEventListener("click", () => {
       currentIndex = (currentIndex - 1 + items.length) % items.length;
       updateCarousel();
     });
 
+    // Click en puntitos
     dots.forEach((dot, index) => {
       dot.addEventListener("click", () => {
         currentIndex = index;
@@ -63,4 +67,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
 
