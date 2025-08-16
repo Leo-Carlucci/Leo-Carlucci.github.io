@@ -319,11 +319,11 @@ nav ul {
 }
 
 .carousel-item img {
-  width: 100%;
+  width: 60%;
   display: block;
+  margin: 0 auto;
   border-radius: 12px;
 }
-
 /* Botones de navegación */
 .carousel-btn {
   position: absolute;
@@ -372,5 +372,6 @@ nav ul {
 .dot.active {
   background-color: #ff0080;
 }
+
 
 
