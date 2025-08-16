@@ -318,7 +318,7 @@ nav ul {
 }
 
 .carousel-item img {
-  width: 50%;
+  width: 72%;
   display: block;
   margin: 0 auto;
   border-radius: 12px;
@@ -372,4 +372,5 @@ nav ul {
 .dot.active {
   background-color: #ff0080;
 }
+
 
