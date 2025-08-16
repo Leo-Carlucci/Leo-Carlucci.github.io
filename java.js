@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ====== MENÚ SECCIONES ======
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('.hidden-section');
 
@@ -22,7 +23,50 @@ document.addEventListener('DOMContentLoaded', () => {
           behavior: 'smooth',
           block: 'start'
         });
-      }, 300); // este delay coincide con la duración en CSS (0.35s aprox.)
+      }, 300); // delay para coincidir con CSS
     });
   });
+
+  // ====== CARRUSEL ======
+  const carousel = document.querySelector(".carousel");
+  const items = document.querySelectorAll(".carousel-item");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  const dots = document.querySelectorAll(".dot");
+
+  if (carousel) { // Solo ejecuta si existe carrusel en la página
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      // actualizar indicadores
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentIndex);
+      });
+    }
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % items.length;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      updateCarousel();
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        currentIndex = index;
+        updateCarousel();
+      });
+    });
+
+    // Auto-play (opcional)
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % items.length;
+      updateCarousel();
+    }, 5000);
+  }
 });
