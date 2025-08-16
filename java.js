@@ -23,24 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
           behavior: 'smooth',
           block: 'start'
         });
-      }, 300); // delay para coincidir con CSS
+      }, 300);
     });
   });
 
-  // ====== CARRUSEL ======
+  // ====== CARRUSEL (manual) ======
   const carousel = document.querySelector(".carousel");
   const items = document.querySelectorAll(".carousel-item");
   const prevBtn = document.querySelector(".prev");
   const nextBtn = document.querySelector(".next");
   const dots = document.querySelectorAll(".dot");
 
-  if (carousel) { // Solo ejecuta si existe carrusel en la página
+  if (carousel) {
     let currentIndex = 0;
 
     function updateCarousel() {
       carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-      // actualizar indicadores
       dots.forEach((dot, index) => {
         dot.classList.toggle("active", index === currentIndex);
       });
@@ -62,11 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCarousel();
       });
     });
-
-    // Auto-play (opcional)
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % items.length;
-      updateCarousel();
-    }, 5000);
   }
 });
+
