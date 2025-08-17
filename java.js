@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ====== CARRUSEL (solo manual) ======
+  // ====== CARRUSEL (manual, 2 imágenes por página) ======
   const carousel = document.querySelector(".carousel");
   const items = document.querySelectorAll(".carousel-item");
   const prevBtn = document.querySelector(".prev");
@@ -36,11 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (carousel) {
     let currentIndex = 0;
+    const itemsPerPage = 2;
+    const totalPages = Math.ceil(items.length / itemsPerPage);
 
     function updateCarousel() {
-      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+      // Desplazamos el carrusel por página
+      carousel.style.transform = `translateX(-${currentIndex * (100 / itemsPerPage)}%)`;
 
-      // actualizar indicadores
+      // Actualizar indicadores
       dots.forEach((dot, index) => {
         dot.classList.toggle("active", index === currentIndex);
       });
@@ -48,13 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Botón siguiente
     nextBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % items.length;
+      currentIndex = (currentIndex + 1) % totalPages;
       updateCarousel();
     });
 
     // Botón anterior
     prevBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      currentIndex = (currentIndex - 1 + totalPages) % totalPages;
       updateCarousel();
     });
 
@@ -65,8 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCarousel();
       });
     });
+
+    // Inicializar
+    updateCarousel();
   }
 });
+
 
 
 
