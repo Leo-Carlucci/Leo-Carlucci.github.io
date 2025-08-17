@@ -1,14 +1,6 @@
 /* =============================
          VARIABLES & BASE STYLES
       ============================= */
-h2, 
-#projects h2,
-#skills h2,
-#contact h2 {
-  font-family: 'Anton', sans-serif;
-  letter-spacing: 1px;
-}
-
 :root {
         --azul-oscuro: #0d1b2a;
         --blanco: #ffffff;
@@ -417,6 +409,7 @@ nav ul {
   border-radius: 8px;
   transition: width 1.5s ease-in-out;
 }
+
 
 
 
