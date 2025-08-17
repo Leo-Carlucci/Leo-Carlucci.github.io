@@ -405,10 +405,11 @@ nav ul {
 .skill-fill {
   height: 100%;
   width: 0;
-  background: linear-gradient(90deg, #051f35, #073955);
+  background: linear-gradient(90deg, #003460, #006197);
   border-radius: 8px;
   transition: width 1.5s ease-in-out;
 }
+
 
 
 
