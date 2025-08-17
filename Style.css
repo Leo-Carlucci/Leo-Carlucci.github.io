@@ -375,6 +375,42 @@ nav ul {
   background-color: #ff0080;
 }
 
+/* ====== SKILLS ====== */
+.skill {
+  margin: 1.5rem 0;
+}
+
+.skill-logo {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.skill-name {
+  font-weight: 600;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+.skill-bar {
+  position: relative;
+  height: 12px;
+  background: #222;
+  border-radius: 8px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #ff0080, #7928ca);
+  border-radius: 8px;
+  transition: width 1.5s ease-in-out;
+}
+
+
 
 
 
