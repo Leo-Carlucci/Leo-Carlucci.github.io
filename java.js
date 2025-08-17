@@ -16,7 +16,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Muestra la sección seleccionada
       targetSection.classList.add('visible-section');
+// ====== ANIMACIÓN SKILLS ======
+function animateSkills() {
+  const fills = document.querySelectorAll("#skills .skill-fill");
+  fills.forEach(fill => {
+    const level = fill.getAttribute("data-level");
+    fill.style.width = level + "%";
+  });
+}
 
+// Escuchar cuando se abre la sección skills
+const skillsSection = document.getElementById("skills");
+const skillsLink = document.querySelector('[data-target="skills"]');
+
+if (skillsLink) {
+  skillsLink.addEventListener("click", () => {
+    setTimeout(() => {
+      animateSkills();
+    }, 400); // espera a que termine la animación de apertura
+  });
+}
       // Retrasa el scroll para que coincida con la animación CSS
       setTimeout(() => {
         targetSection.scrollIntoView({
@@ -73,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel();
   }
 });
+
 
 
 
