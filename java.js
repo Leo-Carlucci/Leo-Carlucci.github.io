@@ -27,37 +27,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ====== CARRUSEL (solo manual) ======
-  const carousel = document.querySelector(".carousel");
-  const items = document.querySelectorAll(".carousel-item");
-  const prevBtn = document.querySelector(".prev");
-  const nextBtn = document.querySelector(".next");
-  const dots = document.querySelectorAll(".dot");
+// ====== CARRUSEL (manual, mostrando 2 imágenes por página) ======
+const carousel = document.querySelector(".carousel");
+const items = document.querySelectorAll(".carousel-item");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+const dots = document.querySelectorAll(".dot");
 
-  if (carousel) {
-    let currentIndex = 0;
+if (carousel) {
+  let currentIndex = 0;
 
-    function updateCarousel() {
-      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+  // cantidad de items visibles por página
+  const itemsPerPage = 2;
+  const totalPages = Math.ceil(items.length / itemsPerPage);
 
-      // actualizar indicadores
-      dots.forEach((dot, index) => {
-        dot.classList.toggle("active", index === currentIndex);
-      });
-    }
+  function updateCarousel() {
+    // desplazamos el carrusel según la página actual
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-    // Botón siguiente
-    nextBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % items.length;
-      updateCarousel();
+    // actualizar indicadores
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === currentIndex);
     });
+  }
 
-    // Botón anterior
-    prevBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + items.length) % items.length;
-      updateCarousel();
-    });
+  // Botón siguiente
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % totalPages;
+    updateCarousel();
+  });
 
+  // Botón anterior
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + totalPages) % totalPages;
+    updateCarousel();
+  });
+
+  // Inicializar
+  updateCarousel();
+}
     // Click en puntitos
     dots.forEach((dot, index) => {
       dot.addEventListener("click", () => {
@@ -67,5 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
 
 
