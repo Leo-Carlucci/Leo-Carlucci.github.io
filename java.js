@@ -63,6 +63,17 @@ if (carousel) {
     updateCarousel();
   });
 
+  // Forzar actualización cuando la sección Projects se muestre
+  const projectsSection = document.getElementById("projects");
+  if (projectsSection) {
+    const observer = new MutationObserver(() => {
+      if (projectsSection.classList.contains("visible-section")) {
+        updateCarousel();
+      }
+    });
+    observer.observe(projectsSection, { attributes: true });
+  }
+
   // Inicializar
   updateCarousel();
 }
@@ -75,6 +86,7 @@ if (carousel) {
     });
   }
 });
+
 
 
 
