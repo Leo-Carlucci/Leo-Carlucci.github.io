@@ -302,22 +302,23 @@ nav ul {
   position: relative;
   max-width: 900px;
   margin: 2rem auto;
-  padding: 0 40px;  /* agrega espacio interno a izquierda y derecha */
   overflow: hidden;
   border-radius: 12px;
+  padding: 0 40px; /* espacio para las flechas */
 }
 
 .carousel {
   display: flex;
-  justify-content: center; /* centra los items dentro del carrusel */
-  gap: 20px; /* espacio entre imágenes */
+  justify-content: center;
   transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-  flex: 0 0 40%; /* menos ancho para que no se peguen a los bordes */
+  flex: 0 0 50%;   /* muestra siempre 2 imágenes exactas */
   box-sizing: border-box;
+  padding: 0 10px; /* un poco de espacio entre ellas */
 }
+
 
 .carousel-item img {
   width: 80%;
@@ -373,6 +374,7 @@ nav ul {
 .dot.active {
   background-color: #ff0080;
 }
+
 
 
 
