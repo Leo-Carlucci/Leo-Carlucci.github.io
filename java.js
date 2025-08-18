@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ===== WELCOME LOGIC =====
+const welcome = document.querySelector(".welcome-hero");
+const goAboutBtn = document.getElementById("goAbout");
+const aboutSection = document.getElementById("about");
+const navBar = document.querySelector(".nav-bar");
+
+if (goAboutBtn) {
+  goAboutBtn.addEventListener("click", () => {
+    // Ocultar welcome con animación
+    welcome.classList.add("fade-out");
+
+    // Mostrar sección about y la nav después de la animación
+    setTimeout(() => {
+      welcome.style.display = "none";
+      aboutSection.classList.add("visible-section");
+      navBar.classList.remove("hidden"); // muestra el menú
+    }, 600);
+  });
+}
   // ====== MENÚ SECCIONES ======
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('.hidden-section');
@@ -97,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(skillsSection, { attributes: true, attributeFilter: ["class"] });
   }
 });
+
 
 
 
