@@ -420,32 +420,30 @@ nav ul {
   animation: fadeInUp 1.5s ease forwards;
 }
 
-.welcome-section h1 {
-  font-family: 'Anton', sans-serif;
-  font-size: 3.5rem;
-  font-weight: 900;
-  color: white;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1.5s ease forwards;
+/* ===== WELCOME SECTION ===== */
+.welcome-section {
+  display: flex; justify-content: center; align-items: center;
+  min-height: 75vh; text-align: center; background: transparent;
+  border: none; padding-block: clamp(3rem, 10vh, 6rem);
 }
+.welcome-title {
+  font-family: 'Anton', sans-serif;
+  font-weight: 900; line-height: 1.1; letter-spacing: .5px;
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  opacity: 0; transform: translateY(24px);
+}
+.welcome-title.animate { animation: fadeInUp 900ms ease forwards; }
 
 .gradient-text {
-  background: linear-gradient(90deg, #00c6ff, #0072ff, #7928ca);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 4rem; /* un poco más grande que el texto normal */
+  background: linear-gradient(90deg, #00c6ff 0%, #0072ff 50%, #7928ca 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  font-size: 1.05em;
 }
 
 @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 
