@@ -420,41 +420,25 @@ nav ul {
   animation: fadeInUp 1.5s ease forwards;
 }
 
+
 /* ===== WELCOME SECTION ===== */
 .welcome-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 75vh;
-  text-align: center;
-  background: transparent;
-  border: none;
-  padding-block: clamp(3rem, 10vh, 6rem);
-}
-
-.welcome-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex; justify-content: center; align-items: center;
+  min-height: 75vh; text-align: center; background: transparent;
+  border: none; padding-block: clamp(3rem, 10vh, 6rem);
 }
 .welcome-title {
   font-family: 'Anton', sans-serif;
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: .5px;
+  font-weight: 900; line-height: 1.1; letter-spacing: .5px;
   font-size: clamp(2.6rem, 6vw, 4.5rem);
-  color: #fff;                 /* asegura color visible */
-  opacity: 0;                  /* estado inicial para la animación */
-  transform: translateY(24px); /* estado inicial para la animación */
-  animation: fadeInUp 900ms ease forwards; /* corre sola al cargar */
+  opacity: 0; transform: translateY(24px);
 }
+.welcome-title.animate { animation: fadeInUp 900ms ease forwards; }
 
 .gradient-text {
   background: linear-gradient(90deg, #00c6ff 0%, #0072ff 50%, #7928ca 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
   font-size: 1.05em;
 }
 
@@ -462,29 +446,6 @@ nav ul {
   0% { opacity: 0; transform: translateY(24px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-
-/* ===== BOTÓN WELCOME ===== */
-.welcome-btn {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.85rem 2rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 30px;
-  text-decoration: none;
-  color: #fff;
-  background: linear-gradient(90deg, #00c6ff, #0072ff, #7928ca);
-  box-shadow: 0 0 15px rgba(0, 114, 255, 0.5);
-  transition: all 0.3s ease;
-}
-
-.welcome-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 20px rgba(0, 114, 255, 0.8);
-}
-
-
 
 
 
