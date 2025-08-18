@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ===== WELCOME LOGIC =====
+// ====== WELCOME ======
 const welcome = document.querySelector(".welcome-hero");
 const goAboutBtn = document.getElementById("goAbout");
 const aboutSection = document.getElementById("about");
@@ -10,11 +10,12 @@ if (goAboutBtn) {
     // Ocultar welcome con animación
     welcome.classList.add("fade-out");
 
-    // Mostrar sección about y la nav después de la animación
+    // Mostrar about y nav después de la animación
     setTimeout(() => {
       welcome.style.display = "none";
-      aboutSection.classList.add("visible-section");
-      navBar.classList.remove("hidden"); // muestra el menú
+      navBar.classList.remove("hidden");   // mostrar nav
+      aboutSection.classList.add("visible-section"); // mostrar about
+      aboutSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 600);
   });
 }
@@ -116,6 +117,7 @@ if (goAboutBtn) {
     observer.observe(skillsSection, { attributes: true, attributeFilter: ["class"] });
   }
 });
+
 
 
 
