@@ -478,6 +478,17 @@ nav ul {
   box-shadow: 0 0 20px rgba(0,114,255,.8);
 }
 
+/* Ocultar nav y secciones al inicio */
+.hidden { display: none !important; }
+
+/* Animación suave al mostrar welcome -> about */
+.fade-out {
+  animation: fadeOut 0.6s forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
 
 
 
