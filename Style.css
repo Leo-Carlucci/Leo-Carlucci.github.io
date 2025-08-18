@@ -409,70 +409,61 @@ nav ul {
   border-radius: 8px;
   transition: width 1.5s ease-in-out;
 }
-/* ======== WELCOME (NUEVO) ======== */
+
+/* ======== WELCOME HERO (FINAL) ======== */
 .welcome-hero {
-  display: grid;
-  place-items: center;
-  min-height: 78vh;
-  padding: clamp(3rem, 10vh, 6rem) 1rem;
-  text-align: center;
   position: relative;
-  z-index: 5;             /* se asegura por encima de otros elementos */
-  border: none;           /* no hereda bordes de otras secciones */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;          /* ocupa toda la altura de la pantalla */
+  text-align: center;
   background: transparent;
+  clear: both;                /* evita interferencia con floats */
 }
 
 .welcome-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
-  /* Animación de entrada (sin esconder el texto) */
-  animation: welcomePop 700ms ease-out both;
-  will-change: transform, filter;
-}
-
-@keyframes welcomePop {
-  0% { transform: translateY(14px) scale(0.985); filter: blur(1.5px); }
-  100% { transform: none; filter: none; }
+  gap: 1.5rem;
+  animation: fadeInUp 1s ease forwards;
 }
 
 .welcome-title {
-  margin: 0;
-  line-height: 1.05;
   font-family: 'Anton', sans-serif;
   font-weight: 900;
-  letter-spacing: 0.4px;
-  color: #ffffff;         /* color base SIEMPRE visible */
+  line-height: 1.1;
+  letter-spacing: .5px;
+  margin: 0;
 }
 
 .welcome-line-1 {
   display: block;
-  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-  margin-bottom: 0.25rem;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: #ffffff; /* SIEMPRE visible */
 }
 
 .welcome-line-2 {
   display: block;
-  font-size: clamp(2.8rem, 7vw, 5rem);  /* más grande que la línea 1 */
-}
-
-/* Degradado SOLO en "Portfolio Website" */
-.welcome-gradient {
-  background-image: linear-gradient(90deg, #00c6ff 0%, #0072ff 50%, #7928ca 100%);
-  background-clip: text;
+  font-size: clamp(3rem, 7vw, 5rem);
+  background: linear-gradient(90deg, #00c6ff 0%, #0072ff 50%, #7928ca 100%);
   -webkit-background-clip: text;
-  /* Fallback visible si el navegador no soporta background-clip:text */
-  color: #a8c9ff;
-  /* En navegadores que sí soportan, hacemos el texto transparente para ver el degradado */
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #ffffff; /* fallback para navegadores */
+  -webkit-text-fill-color: transparent; /* aplica degradado en navegadores compatibles */
 }
 
-/* Botón (usa tu mismo estilo previo; si no lo tenés, este funciona) */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* BOTÓN */
 .welcome-btn {
   display: inline-block;
   padding: 0.9rem 2rem;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 600;
   border-radius: 999px;
   text-decoration: none;
@@ -481,14 +472,10 @@ nav ul {
   box-shadow: 0 0 15px rgba(0, 114, 255, 0.5);
   transition: transform .25s ease, box-shadow .25s ease;
 }
+
 .welcome-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 20px rgba(0,114,255,.8);
-}
-
-/* Accesibilidad: si el usuario reduce animaciones, nada se esconde */
-@media (prefers-reduced-motion: reduce) {
-  .welcome-inner { animation: none; }
 }
 
 
