@@ -437,18 +437,17 @@ nav ul {
   flex-direction: column;
   align-items: center;
 }
-
 .welcome-title {
   font-family: 'Anton', sans-serif;
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: .5px;
   font-size: clamp(2.6rem, 6vw, 4.5rem);
-  opacity: 0;
-  transform: translateY(24px);
+  color: #fff;                 /* asegura color visible */
+  opacity: 0;                  /* estado inicial para la animación */
+  transform: translateY(24px); /* estado inicial para la animación */
+  animation: fadeInUp 900ms ease forwards; /* corre sola al cargar */
 }
-
-.welcome-title.animate { animation: fadeInUp 900ms ease forwards; }
 
 .gradient-text {
   background: linear-gradient(90deg, #00c6ff 0%, #0072ff 50%, #7928ca 100%);
@@ -484,6 +483,7 @@ nav ul {
   transform: translateY(-3px);
   box-shadow: 0 0 20px rgba(0, 114, 255, 0.8);
 }
+
 
 
 
