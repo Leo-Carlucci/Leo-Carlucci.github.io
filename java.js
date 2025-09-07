@@ -3,31 +3,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('.hidden-section');
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
 
-      const targetId = link.getAttribute('data-target');
-      const targetSection = document.getElementById(targetId);
-      if (!targetSection) return;
+    const targetId = link.getAttribute('data-target');
+    const targetSection = document.getElementById(targetId);
+    if (!targetSection) return;
 
-      // Oculta todas las secciones
-      sections.forEach(sec => sec.classList.remove('visible-section'));
+    // Oculta todas las secciones
+    sections.forEach(sec => sec.classList.remove('visible-section'));
 
-      // Muestra la sección seleccionada
-      targetSection.classList.add('visible-section');
+    // Muestra la sección seleccionada
+    targetSection.classList.add('visible-section');
 
-      // Solo hacer scroll si el usuario hizo click en el menú DESPUÉS de cargar la página
-      if (e.isTrusted) {
-        setTimeout(() => {
-          targetSection.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-          });
-        }, 300);
-      }
-    });
+    // Actualiza la URL sin forzar salto visual raro
+    history.replaceState(null, "", "#" + targetId);
+
+    // Opcional: scroll solo si la sección está más abajo
+    setTimeout(() => {
+      const y = targetSection.getBoundingClientRect().top + window.scrollY - 80; 
+      // ese "-80" es para dar aire, podés ajustarlo
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }, 300);
   });
+});
+
 
   // ====== CARRUSEL (manual, 2 imágenes por página) ======
   const carousel = document.querySelector(".carousel");
@@ -97,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(skillsSection, { attributes: true, attributeFilter: ["class"] });
   }
 });
+
 
 
 
