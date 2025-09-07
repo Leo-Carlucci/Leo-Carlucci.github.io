@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
   // ====== CARRUSEL (manual, 2 imágenes por página) ======
   const carousel = document.querySelector(".carousel");
   const items = document.querySelectorAll(".carousel-item");
@@ -98,9 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(skillsSection, { attributes: true, attributeFilter: ["class"] });
   }
 });
-
-
-
 
 
 
