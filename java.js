@@ -17,13 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // Muestra la sección seleccionada
       targetSection.classList.add('visible-section');
 
-      // Solo hacer scroll si el usuario hizo click en el menú DESPUÉS de cargar la página
+      // Scroll suave hacia la sección (sin cambiar la URL)
       if (e.isTrusted) {
         setTimeout(() => {
-          targetSection.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-          });
+          const y = targetSection.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top: y, behavior: "smooth" });
         }, 300);
       }
     });
@@ -97,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(skillsSection, { attributes: true, attributeFilter: ["class"] });
   }
 });
-
 
 
 
